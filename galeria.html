@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #4a2c2a;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+      padding: 30px;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 8px;
+      padding: 12px 24px;
+      background-color: #ffb6c1;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #e75480;
+      transform: scale(1.05);
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .galeria-grid img,
+    .galeria-grid video {
+      width: 100%;
+      border-radius: 15px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .galeria-grid img:hover,
+    .galeria-grid video:hover {
+      transform: scale(1.05) rotateZ(-1deg);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+    }
+
+    .frase-final {
+      background-color: #ffeef3;
+      padding: 25px;
+      font-size: 1.3em;
+      font-style: italic;
+      color: #7b4444;
+      border-top: 2px dashed #ffc0cb;
+      border-bottom: 2px dashed #ffc0cb;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📸 Nuestra Galería</h1>
+</header>
+
+<nav>
+  <a href="index.html">💌 Carta</a>
+  <a href="galeria.html">📸 Galería</a>
+  <a href="musica.html">🎵 Música</a>
+  <a href="fecha.html">📅 Fechas</a>
+  <a href="contador.html">❤️ Contador</a>
+</nav>
+
+<div class="galeria-grid">
+  <!-- FOTOS -->
+  <img src="foto1.jpeg" alt="Foto 1">
+  <img src="foto2.jpeg" alt="Foto 2">
+  <img src="foto3.jpeg" alt="Foto 3">
+  <img src="foto4.jpeg" alt="Foto 4">
+  <img src="foto5.jpeg" alt="Foto 5">
+  <img src="foto6.jpeg" alt="Foto 6">
+
+  <!-- VIDEOS LOCALES -->
+  <video controls>
+    <source src="AWNPE8612.MOV" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+
+  <video controls>
+    <source src="HEIN3511.MOV" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+
+
+<video controls>
+  <source src="MDDR9666.MP4" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+
+<video controls>
+  <source src="SVVR8268.MP4" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+
+<video controls>
+  <source src="LYDW5569.MOV" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+
+<video controls>
+  <source src="PLCS6460.MOV" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+</div>
+
+<div class="frase-final">
+  Cada momento, cada recuerdo, cada segundo contigo me hace amarte más. 💖
+</div>
+
+</body>
+</html>

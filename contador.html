@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff8f0;
+      text-align: center;
+      color: #333;
+    }
+
+    header {
+      background: #ffb6c1;
+      padding: 30px 20px;
+      color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff8f0;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    nav a {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #e25570;
+      transform: scale(1.05);
+    }
+
+    section {
+      margin: 60px auto;
+      max-width: 600px;
+      background: #ffe4e1;
+      border: 2px solid #ffb6c1;
+      border-radius: 15px;
+      padding: 40px 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    section p {
+      font-size: 1.5rem;
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #d6336c;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>❤️ Tiempo juntos</h1>
+</header>
+
+<nav>
+  <a href="index.html">💌 Carta</a>
+  <a href="galeria.html">📸 Galería</a>
+  <a href="musica.html">🎵 Música</a>
+  <a href="fecha.html">📅 Fechas</a>
+  <a href="contador.html">❤️ Contador</a>
+</nav>
+
+<section>
+  <p>Han pasado:</p>
+  <h3 id="dias">...</h3>
+</section>
+
+<script>
+  const inicio = new Date("2024-06-07");
+  const hoy = new Date();
+  const diferencia = hoy - inicio;
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+  // Efecto de conteo animado
+  let count = 0;
+  const objetivo = dias;
+  const velocidad = 30; // milisegundos
+
+  const contador = () => {
+    if (count < objetivo) {
+      count++;
+      document.getElementById('dias').textContent = `${count} días juntos ❤️`;
+      setTimeout(contador, velocidad);
+    } else {
+      document.getElementById('dias').textContent = `${dias} días juntos ❤️`;
+    }
+  };
+
+  contador();
+</script>
+
+</body>
+</html>

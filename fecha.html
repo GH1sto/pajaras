@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fechas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background: #ffb6c1;
+      padding: 30px 20px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff8f0;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    nav a {
+      background-color: #ff6b81;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #e25570;
+      transform: scale(1.05);
+    }
+
+    .fechas-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 20px;
+    }
+
+    .fecha-tarjeta {
+      background-color: #ffe4e1;
+      border: 2px solid #ffb6c1;
+      border-radius: 15px;
+      padding: 25px 20px;
+      margin: 15px 0;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .fecha-tarjeta:hover {
+      transform: translateY(-5px);
+    }
+
+    .fecha-tarjeta h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.3em;
+      color: #d6336c;
+    }
+
+    .fecha-tarjeta p {
+      margin: 0;
+      font-size: 1.05em;
+    }
+
+    @media (max-width: 500px) {
+      nav a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .fecha-tarjeta {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📅 Fechas importantes</h1>
+</header>
+
+<nav>
+  <a href="index.html">💌 Carta</a>
+  <a href="galeria.html">📸 Galería</a>
+  <a href="musica.html">🎵 Música</a>
+  <a href="fecha.html">📅 Fechas</a>
+  <a href="contador.html">❤️ Contador</a>
+</nav>
+
+<div class="fechas-container">
+  <div class="fecha-tarjeta">
+    <h3>💑 Nos conocimos</h3>
+    <p>1 de Julio 💕</p>
+  </div>
+
+  <div class="fecha-tarjeta">
+    <h3>💍 Nos hicimos novias</h3>
+    <p>7 de Julio 💕</p>
+  </div>
+
+  <div class="fecha-tarjeta">
+    <h3>💗 Primer te amo</h3>
+    <p>7 de Julio 💕</p>
+  </div>
+
+  <div class="fecha-tarjeta">
+    <h3>💋 Primer beso</h3>
+    <p>1 de Noviembre 💕</p>
+  </div>
+
+  <div class="fecha-tarjeta">
+    <h3>🥰 Dormimos juntas</h3>
+    <p>1 de Noviembre 💕</p>
+  </div>
+
+  <div class="fecha-tarjeta">
+    <h3>💘​  Primera salida junta</h3>
+    <p>3 de Noviembre 💕</p>
+  </div>
+
+  <div class="fecha-tarjeta">
+    <h3>​🤍​ Le entregue el anillo de promesa</h3>
+    <p>5 de Noviembre 💕</p>
+  </div>
+</div>
+
+</body>
+</html>

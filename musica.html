@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Música</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #4a2c2a;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+      padding: 40px 20px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+      text-shadow: 1px 1px 2px #d16a7c;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #ff85a2;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #e75480;
+      transform: scale(1.05);
+    }
+
+    .canciones-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 30px;
+    }
+
+    .tarjeta-cancion {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      max-width: 320px;
+      width: 90%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .tarjeta-cancion:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .tarjeta-cancion img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .tarjeta-cancion h3 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+      color: #d6336c;
+    }
+
+    .letra {
+      font-size: 0.95rem;
+      margin-top: 10px;
+      color: #555;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    /* 🎧 Animación activa */
+    .reproduciendo {
+      animation: brillar 1s infinite alternate;
+      box-shadow: 0 0 20px #ff99b3;
+    }
+
+    @keyframes brillar {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.03);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎶 Nuestra música especial</h1>
+</header>
+
+<nav>
+  <a href="index.html">💌 Carta</a>
+  <a href="galeria.html">📸 Galería</a>
+  <a href="musica.html">🎵 Música</a>
+  <a href="fecha.html">📅 Fechas</a>
+  <a href="contador.html">❤️ Contador</a>
+</nav>
+
+<div class="canciones-container">
+
+  <!-- Tarjeta 1 -->
+  <div class="tarjeta-cancion">
+    <img src="portada1.jpg" alt="Portada Canción 1">
+    <h3>Best Part</h3>
+    <audio controls>
+      <source src="cancion.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+    <p class="letra">"If life is a movie<br>Oh, you're the best part<br>You're the best part"</p>
+  </div>
+
+  <!-- Tarjeta 2 -->
+  <div class="tarjeta-cancion">
+    <img src="portada2.webp" alt="Portada Canción 2">
+    <h3>Kintsugi – Humbe</h3>
+    <audio controls>
+      <source src="HUMBE - KINTSUGI.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+    <p class="letra">"Te necesito<br>Que muy lento se vaya la ropa<br>Solo quiero ser tu favorito"</p>
+  </div>
+
+  <!-- Tarjeta 3 -->
+  <div class="tarjeta-cancion">
+    <img src="portada3.jpg" alt="Portada Canción 3">
+    <h3>Patadas de Ahogado</h3>
+    <audio controls>
+      <source src="LATIN MAFIA, Humbe - Patadas de Ahogado.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+    <p class="letra">"Quiero saberte a lo que quieres<br>Ser música de la que prefieres<br>Y que nunca me quieras pausar"</p>
+  </div>
+
+</div>
+
+<script>
+  const audios = document.querySelectorAll("audio");
+
+  audios.forEach(audio => {
+    audio.addEventListener("play", () => {
+      // Pausar otros audios
+      audios.forEach(a => {
+        if (a !== audio) {
+          a.pause();
+          a.closest(".tarjeta-cancion").classList.remove("reproduciendo");
+        }
+      });
+
+      // Agregar animación a la tarjeta actual
+      audio.closest(".tarjeta-cancion").classList.add("reproduciendo");
+    });
+
+    audio.addEventListener("pause", () => {
+      // Quitar animación si se pausa
+      audio.closest(".tarjeta-cancion").classList.remove("reproduciendo");
+    });
+  });
+</script>
+
+</body>
+</html>
